@@ -4,8 +4,8 @@
 
 This guide declares its tests with the [TestPlan](https://build.fhir.org/ig/HL7/fhir-testing-ig/en/StructureDefinition-TestPlan.html) resource from the [FHIR Testing IG](https://build.fhir.org/ig/HL7/fhir-testing-ig/en/) (`hl7.fhir.uv.testing`), one plan per actor the specification defines. Each plan's `scope` names the actor — what is under test — and each of its tests is one `Scenario:` of a Gherkin feature file that the plan points at through `suite.input.file`.
 
-| Test plan | Actor under test | Content | Feature file |
-| --------- | ---------------- | ------- | ------------ |
+| Test plan | Under test | Content | Feature file |
+| --------- | ---------- | ------- | ------------ |
 | [IPS Creator Test Plan](TestPlan-ips-creator-tests.html) | [IPS Creator](http://hl7.org/fhir/uv/ips/ActorDefinition/Creator) | 31 scenarios, 229 element obligations covered | `ips-creator.feature` |
 | [IPS Consumer Test Plan](TestPlan-ips-consumer-tests.html) | [IPS Consumer](http://hl7.org/fhir/uv/ips/ActorDefinition/Consumer) | 31 scenarios, 240 element obligations covered | `ips-consumer.feature` |
 | [IPS Server Test Plan](TestPlan-ips-server-tests.html) | [IPS Server](http://hl7.org/fhir/uv/ips/CapabilityStatement/ips-server) | 6 scenarios, 9 element obligations covered | `ips-server.feature` |
@@ -31,6 +31,6 @@ Every scenario declares the profile and elements it covers (`@profile:`, `@cover
 
 ### The Gherkin feature files
 
-The executable test cases live under `input/testing/gherkin/`, one feature per actor. They ship **as Gherkin, not as a FHIR resource**: the `path-test` parameter mirrors the test tree into the published package under `package/tests/gherkin/`, which is what a test runner consumes. `TestPlan.suite.input.file` names the file, and each `suite.test` matches a `Scenario:` by its identifier.
+The executable test cases live under `input/testing/gherkin/`. They ship **as Gherkin, not as a FHIR resource**: the `path-test` parameter mirrors the test tree into the published package under `package/tests/gherkin/`, which is what a test runner consumes. `TestPlan.suite.input.file` names the file, and each `suite.test` matches a `Scenario:` by its identifier.
 
 The Binary resources on this site exist only so the scripts render as syntax-highlighted pages; removing them changes nothing for a runner.
