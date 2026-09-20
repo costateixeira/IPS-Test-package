@@ -25,6 +25,7 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 # TestPlan lives in the FHIR Testing IG (removed from R6 core at 6.0.0-ballot5).
 dependencies:
   hl7.fhir.uv.testing: current
+  hl7.fhir.uv.tools.r5: 1.2.0
   # The specification whose actors these plans test — tracking only, so the
   # canonicals the plans point at resolve. A cross-version reference when the
   # spec is R4: only canonicals are used, no profiles are derived.
