@@ -279,7 +279,13 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "Composition.section:sectionVitalSigns.text (SHALL:populate): $ips at \"Bundle.entry.resource.ofType(Composition).section.where(code.coding.where(system='http://loinc.org' and code='8716-3').exists()).all(text.exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "section:sectionProblems.emptyReason (can be populated) — Creator confirms each of these is supported for \"Composition, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "section:sectionAllergies.emptyReason (can be populated) — Creator confirms each of these is supported for \"Composition, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "section:sectionMedications.emptyReason (can be populated) — Creator confirms each of these is supported for \"Composition, when the information is known\""
     * assertion[+]
       * severity = #error
       * human = "log \"Composition.meta.profile MAY be populated — recorded, not asserted\""
@@ -323,7 +329,10 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "Patient.address (SHALL:populate-if-known): $ips at \"Bundle.entry.resource.ofType(Patient).all(address.exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "name.text (can be populated) — Creator confirms each of these is supported for \"Patient, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "generalPractitioner (can be populated) — Creator confirms each of these is supported for \"Patient, when the information is known\""
   * test[+]
     * name = "ips-creator-004 Practitioner (IPS) — the Creator populates 5 elements when known"
     * description = "Covers Practitioner-uv-ips: Practitioner.name, Practitioner.name.family, Practitioner.name.given, Practitioner.telecom, Practitioner.address."
@@ -342,14 +351,14 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "Practitioner.telecom (SHALL:populate-if-known): $ips at \"Bundle.entry.resource.ofType(Practitioner).all(telecom.exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "address (can be populated) — Creator confirms each of these is supported for \"Practitioner, when the information is known\""
   * test[+]
     * name = "ips-creator-005 PractitionerRole (IPS) — the Creator populates 1 element when known"
     * description = "Covers PractitionerRole-uv-ips: PractitionerRole.organization."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "organization (can be populated) — Creator confirms each of these is supported for \"PractitionerRole, when the information is known\""
   * test[+]
     * name = "ips-creator-006 Organization (IPS) — the Creator populates 3 elements when known"
     * description = "Covers Organization-uv-ips: Organization.name, Organization.telecom, Organization.address."
@@ -359,7 +368,10 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "Instances: Bundle.entry.resource.ofType(Organization) Organization.name (SHALL:populate-if-known): $ips at \"Bundle.entry.resource.ofType(Organization).all(name.exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "telecom (can be populated) — Creator confirms each of these is supported for \"Organization, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "address (can be populated) — Creator confirms each of these is supported for \"Organization, when the information is known\""
 
 * suite[+]
   * name = "The required sections: problems, allergies, medications"
@@ -385,7 +397,22 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "AllergyIntolerance.patient.reference (SHALL:populate-if-known): $ips at \"Bundle.entry.resource.ofType(AllergyIntolerance).patient.all(reference.exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "type (can be populated) — Creator confirms each of these is supported for \"AllergyIntolerance, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "onset[x] (can be populated) — Creator confirms each of these is supported for \"AllergyIntolerance, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "onset[x]:onsetDateTime (can be populated) — Creator confirms each of these is supported for \"AllergyIntolerance, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "reaction (can be populated) — Creator confirms each of these is supported for \"AllergyIntolerance, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "reaction.manifestation (can be populated) — Creator confirms each of these is supported for \"AllergyIntolerance, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "reaction.severity (can be populated) — Creator confirms each of these is supported for \"AllergyIntolerance, when the information is known\""
   * test[+]
     * name = "ips-creator-008 Condition (IPS) — the Creator populates 7 elements when known"
     * description = "Covers Condition-uv-ips: Condition.clinicalStatus, Condition.category, Condition.severity, Condition.code, Condition.subject, Condition.subject.reference, Condition.onset[x], Condition.onset[x]:onsetDateTime."
@@ -410,21 +437,51 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "Condition.onset[x]:onsetDateTime (SHOULD:able-to-populate): $ips at \"Bundle.entry.resource.ofType(Condition).all(onset.ofType(dateTime).exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "category (can be populated) — Creator confirms each of these is supported for \"Condition, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "severity (can be populated) — Creator confirms each of these is supported for \"Condition, when the information is known\""
   * test[+]
     * name = "ips-creator-009 Medication (IPS) — the Creator populates 5 elements when known"
     * description = "Covers Medication-uv-ips: Medication.code, Medication.form, Medication.ingredient, Medication.ingredient.item[x], Medication.ingredient.strength."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "code (can be populated) — Creator confirms each of these is supported for \"Medication, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "form (can be populated) — Creator confirms each of these is supported for \"Medication, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "ingredient (can be populated) — Creator confirms each of these is supported for \"Medication, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "ingredient.item[x] (can be populated) — Creator confirms each of these is supported for \"Medication, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "ingredient.strength (can be populated) — Creator confirms each of these is supported for \"Medication, when the information is known\""
   * test[+]
     * name = "ips-creator-010 MedicationRequest (IPS) — the Creator populates 6 elements when known"
     * description = "Covers MedicationRequest-uv-ips: MedicationRequest.medication[x], MedicationRequest.subject, MedicationRequest.subject.reference, MedicationRequest.dosageInstruction, MedicationRequest.dosageInstruction.text, MedicationRequest.dosageInstruction.timing."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "medication[x] (can be populated) — Creator confirms each of these is supported for \"MedicationRequest, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject (can be populated) — Creator confirms each of these is supported for \"MedicationRequest, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject.reference (can be populated) — Creator confirms each of these is supported for \"MedicationRequest, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "dosageInstruction (can be populated) — Creator confirms each of these is supported for \"MedicationRequest, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "dosageInstruction.text (can be populated) — Creator confirms each of these is supported for \"MedicationRequest, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "dosageInstruction.timing (can be populated) — Creator confirms each of these is supported for \"MedicationRequest, when the information is known\""
   * test[+]
     * name = "ips-creator-011 MedicationStatement (IPS) — the Creator populates 7 elements when known"
     * description = "Covers MedicationStatement-uv-ips: MedicationStatement.medication[x], MedicationStatement.subject, MedicationStatement.subject.reference, MedicationStatement.effective[x], MedicationStatement.effective[x]:effectiveDateTime, MedicationStatement.dosage, MedicationStatement.dosage.text, MedicationStatement.dosage.timing."
@@ -515,35 +572,119 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "Observation.value[x]:valueQuantity (SHALL:populate-if-known) — the reference data carries it on some instances: $ips at \"Bundle.entry.resource.ofType(Observation).where(category.coding.where(code='laboratory').exists()).where(value.ofType(Quantity).exists()).exists()\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "value[x]:valueCodeableConcept (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "component (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
   * test[+]
     * name = "ips-creator-014 Observation Results - Radiology (IPS) — the Creator populates 8 elements when known"
     * description = "Covers Observation-results-radiology-uv-ips: Observation.category:radiology, Observation.code, Observation.subject, Observation.subject.reference, Observation.effective[x], Observation.effective[x]:effectiveDateTime, Observation.performer, Observation.value[x]:valueString, Observation.component."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "category:radiology (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "code (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject.reference (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "effective[x] (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "effective[x]:effectiveDateTime (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "performer (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "value[x]:valueString (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "component (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
   * test[+]
     * name = "ips-creator-015 DiagnosticReport (IPS) — the Creator populates 6 elements when known"
     * description = "Covers DiagnosticReport-uv-ips: DiagnosticReport.code, DiagnosticReport.subject, DiagnosticReport.subject.reference, DiagnosticReport.effective[x], DiagnosticReport.effective[x]:effectiveDateTime, DiagnosticReport.performer, DiagnosticReport.result:observation-results."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "code (can be populated) — Creator confirms each of these is supported for \"DiagnosticReport, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject (can be populated) — Creator confirms each of these is supported for \"DiagnosticReport, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject.reference (can be populated) — Creator confirms each of these is supported for \"DiagnosticReport, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "effective[x] (can be populated) — Creator confirms each of these is supported for \"DiagnosticReport, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "effective[x]:effectiveDateTime (can be populated) — Creator confirms each of these is supported for \"DiagnosticReport, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "performer (can be populated) — Creator confirms each of these is supported for \"DiagnosticReport, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "result:observation-results (can be populated) — Creator confirms each of these is supported for \"DiagnosticReport, when the information is known\""
   * test[+]
     * name = "ips-creator-016 Specimen (IPS) — the Creator populates 3 elements when known"
     * description = "Covers Specimen-uv-ips: Specimen.type, Specimen.subject, Specimen.subject.reference."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "type (can be populated) — Creator confirms each of these is supported for \"Specimen, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject (can be populated) — Creator confirms each of these is supported for \"Specimen, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject.reference (can be populated) — Creator confirms each of these is supported for \"Specimen, when the information is known\""
   * test[+]
     * name = "ips-creator-017 ImagingStudy (IPS) — the Creator populates 12 elements when known"
     * description = "Covers ImagingStudy-uv-ips: ImagingStudy.identifier, ImagingStudy.subject, ImagingStudy.subject.reference, ImagingStudy.started, ImagingStudy.procedureCode, ImagingStudy.reasonCode, ImagingStudy.series, ImagingStudy.series.uid, ImagingStudy.series.modality, ImagingStudy.series.instance, ImagingStudy.series.instance.uid, ImagingStudy.series.instance.sopClass."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "identifier (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject.reference (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "started (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "procedureCode (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "reasonCode (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "series (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "series.uid (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "series.modality (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "series.instance (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "series.instance.uid (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "series.instance.sopClass (can be populated) — Creator confirms each of these is supported for \"ImagingStudy, when the information is known\""
   * test[+]
     * name = "ips-creator-018 Procedure (IPS) — the Creator populates 4 elements when known"
     * description = "Covers Procedure-uv-ips: Procedure.code, Procedure.subject, Procedure.subject.reference, Procedure.performed[x], Procedure.performed[x]:performedDateTime."
@@ -569,7 +710,13 @@ The tests declare which specification obligations they cover (229 element obliga
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "identifier (can be populated) — Creator confirms each of these is supported for \"Device, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "manufacturer (can be populated) — Creator confirms each of these is supported for \"Device, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "modelNumber (can be populated) — Creator confirms each of these is supported for \"Device, when the information is known\""
   * test[+]
     * name = "ips-creator-020 Device (IPS) — the Creator populates 1 element when known"
     * description = "Covers Device-uv-ips: Device.type."
@@ -592,7 +739,10 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "DeviceUseStatement.device (SHALL:populate-if-known): $ips at \"Bundle.entry.resource.ofType(DeviceUseStatement).all(device.exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "timing[x] (can be populated) — Creator confirms each of these is supported for \"DeviceUseStatement, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "timing[x]:timingDateTime (can be populated) — Creator confirms each of these is supported for \"DeviceUseStatement, when the information is known\""
 
 * suite[+]
   * name = "The optional sections: alerts, pregnancy, social history"
@@ -618,21 +768,45 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "Flag.subject.reference (SHALL:populate-if-known): $ips at \"Bundle.entry.resource.ofType(Flag).subject.all(reference.exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "extension:flag-priority (can be populated) — Creator confirms each of these is supported for \"Flag, when the information is known\""
   * test[+]
     * name = "ips-creator-023 Observation Pregnancy - Expected Delivery Date (IPS) — the Creator populates 5 elements when known"
     * description = "Covers Observation-pregnancy-edd-uv-ips: Observation.code, Observation.subject, Observation.subject.reference, Observation.effective[x], Observation.value[x]:valueDateTime."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "code (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject.reference (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "effective[x] (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "value[x]:valueDateTime (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
   * test[+]
     * name = "ips-creator-024 Observation Pregnancy - Outcome (IPS) — the Creator populates 5 elements when known"
     * description = "Covers Observation-pregnancy-outcome-uv-ips: Observation.code, Observation.subject, Observation.subject.reference, Observation.effective[x], Observation.value[x]:valueQuantity."
     * operation = #gherkin/Scenario
     * assertion[0]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "code (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "subject.reference (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "effective[x] (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "value[x]:valueQuantity (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
   * test[+]
     * name = "ips-creator-025 Observation Pregnancy - Status (IPS) — the Creator populates 7 elements when known"
     * description = "Covers Observation-pregnancy-status-uv-ips: Observation.code, Observation.subject, Observation.subject.reference, Observation.effective[x], Observation.value[x]:valueCodeableConcept, Observation.hasMember, Observation.hasMember.reference."
@@ -654,7 +828,10 @@ The tests declare which specification obligations they cover (229 element obliga
       * human = "Observation.value[x]:valueCodeableConcept (SHALL:populate-if-known): $ips at \"Bundle.entry.resource.ofType(Observation).where(code.coding.where(code='82810-3').exists()).all(value.ofType(CodeableConcept).exists())\" should be true"
     * assertion[+]
       * severity = #error
-      * human = "$canPopulate should be \"yes\""
+      * human = "hasMember (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
+    * assertion[+]
+      * severity = #error
+      * human = "hasMember.reference (can be populated) — Creator confirms each of these is supported for \"Observation, when the information is known\""
 
 * suite[+]
   * name = "Data types used throughout"
