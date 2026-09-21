@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Method - IPS: TestPlans and Gherkin for the IPS actors v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/colors.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">IPS: TestPlans and Gherkin for the IPS actors</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="International flag" src="../assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/6.0.0-ballot5/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="testing.html">Testing</a>
+  </li>
+  <li>
+    <a href="process.html">Method</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Method</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">IPS: TestPlans and Gherkin for the IPS actors, published by Jose Costa Teixeira. This guide is not an authorized publication; it is the continuous build for version 0.1.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href='https://github.com/costateixeira/IPS-Test-package/tree/master'>https://github.com/costateixeira/IPS-Test-package/tree/master</a> and changes regularly. See the <a href='http://example.com/fhir/hl7.fhir.uv.ips.test/history.html'>Directory of published versions</a><br/><span data-smart-ci-extra="1" style="font-size:.85em;">Built from commit <a href="https://github.com/costateixeira/IPS-Test-package/commit/d9e2e6dec8990688fd306dd864ade8ce454ef101"><code>d9e2e6de</code></a>.</span></p><!--EndReleaseHeader-->
+  <h2>Method</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h1 id="ips-test-cases--the-record">IPS test cases — the record</h1>
+
+<p>How the test cases for the actors of HL7 International Patient Summary (IPS)
+2.0.1 were produced and checked, step by step, so the process can be repeated
+for the next IPS release or for another specification. The reusable procedure
+is the <code class="language-plaintext highlighter-rouge">spec-to-test-ig</code> skill; the tooling is <code class="language-plaintext highlighter-rouge">app/scripts/ips-obligations.mjs</code>
+and <code class="language-plaintext highlighter-rouge">app/scripts/build-test-ig.mjs</code>.</p>
+
+<h2 id="1-the-specification">1. The specification</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Package</td>
+      <td><code class="language-plaintext highlighter-rouge">hl7.fhir.uv.ips</code> 2.0.1, FHIR 4.0.1, downloaded from https://hl7.org/fhir/uv/ips/package.tgz</td>
+    </tr>
+    <tr>
+      <td>Read from</td>
+      <td>the package, not the HTML: the pages render client-side and could not be fetched reliably</td>
+    </tr>
+    <tr>
+      <td>Examples used</td>
+      <td><code class="language-plaintext highlighter-rouge">Bundle-bundle-ips-all-sections</code> (42 entries, all 16 sections — the <strong>reference dataset</strong>), <code class="language-plaintext highlighter-rouge">Bundle-bundle-no-info-required-sections</code> (required sections with <code class="language-plaintext highlighter-rouge">emptyReason</code>), <code class="language-plaintext highlighter-rouge">Bundle-bundle-minimal</code></td>
+    </tr>
+    <tr>
+      <td>Reference dataset validated</td>
+      <td>HL7 validator 6.x (<code class="language-plaintext highlighter-rouge">validator_cli.jar</code>), <code class="language-plaintext highlighter-rouge">-ig hl7.fhir.uv.ips#2.0.1</code>: 0 errors, 0 warnings</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2-the-actors">2. The actors</h2>
+
+<p>Three <code class="language-plaintext highlighter-rouge">ActorDefinition</code>s (carried as <code class="language-plaintext highlighter-rouge">Basic</code> resources in the R4 package):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Actor</th>
+      <th>Canonical</th>
+      <th>Role</th>
+      <th>Tested by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Creator</td>
+      <td><code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/uv/ips/ActorDefinition/Creator</code></td>
+      <td>produces / assembles an IPS document</td>
+      <td><code class="language-plaintext highlighter-rouge">ips-creator.feature</code> (generated)</td>
+    </tr>
+    <tr>
+      <td>Consumer</td>
+      <td><code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/uv/ips/ActorDefinition/Consumer</code></td>
+      <td>receives a document and uses its content</td>
+      <td><code class="language-plaintext highlighter-rouge">ips-consumer.feature</code> (generated)</td>
+    </tr>
+    <tr>
+      <td>Server</td>
+      <td><code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/uv/ips/ActorDefinition/Server</code>, derived from Creator, capabilities <code class="language-plaintext highlighter-rouge">CapabilityStatement/ips-server</code></td>
+      <td>a FHIR server acting as a Creator through <code class="language-plaintext highlighter-rouge">$summary</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ips-server.feature</code> (hand-written: the transport) + the Creator feature on its output</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3-the-obligations">3. The obligations</h2>
+
+<p>Extracted from the <code class="language-plaintext highlighter-rouge">obligation</code> extension on every profile's snapshot elements:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Profiles carrying obligations</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>Element obligations</td>
+      <td>676 (Creator 229, Consumer 447; none on Server, which inherits the Creator's)</td>
+    </tr>
+    <tr>
+      <td>Codes used</td>
+      <td><code class="language-plaintext highlighter-rouge">SHALL:populate</code>, <code class="language-plaintext highlighter-rouge">SHALL:populate-if-known</code>, <code class="language-plaintext highlighter-rouge">SHOULD:populate-if-known</code>, <code class="language-plaintext highlighter-rouge">SHALL:able-to-populate</code>, <code class="language-plaintext highlighter-rouge">SHOULD:able-to-populate</code>, <code class="language-plaintext highlighter-rouge">MAY:able-to-populate</code>, <code class="language-plaintext highlighter-rouge">SHALL:handle</code>, <code class="language-plaintext highlighter-rouge">SHOULD:display</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The inventory is <code class="language-plaintext highlighter-rouge">app/public/data/ips-obligations.json</code>; the coverage matrix
+<code class="language-plaintext highlighter-rouge">app/public/data/ips-obligation-coverage.json</code>.</p>
+
+<h2 id="4-the-test-cases-that-are-needed">4. The test cases that are needed</h2>
+
+<p>One test pattern per obligation code, applied to every element:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Obligation</th>
+      <th>Creator test</th>
+      <th>Consumer test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SHALL:populate</code></td>
+      <td>the element exists in every produced instance</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SHALL:populate-if-known</code></td>
+      <td>exists wherever the reference dataset has it</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SHALL/SHOULD:able-to-populate</code></td>
+      <td>exists in the produced document; attested when the reference data cannot exercise it</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MAY:able-to-populate</code></td>
+      <td>logged</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SHALL:handle</code></td>
+      <td>—</td>
+      <td>the operator attaches the import log or a screenshot as evidence, then confirms each element from a list (one Yes/No per element, one verdict per element)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SHOULD:display</code></td>
+      <td>—</td>
+      <td>the operator is instructed to display the elements, attaches a screenshot as evidence, then confirms each one from a list; one verdict per element</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Decisions taken:</p>
+
+<ul>
+  <li><strong>Reference dataset.</strong> The Creator's system is loaded with Patricia JORDANA
+(identifier ABC1234) from the all-sections example, so "if known" has a
+definite meaning: known is what the example carries. The Consumer is handed
+the same document. The assertion form (<code class="language-plaintext highlighter-rouge">all</code>, <code class="language-plaintext highlighter-rouge">where(...).exists()</code>, or an
+attestation prompt) is decided by evaluating the candidate against the
+example with the FHIRPath engine at generation time.</li>
+  <li><strong>Sections</strong> are selected by their LOINC code (from the profile's pattern),
+not by slice name; entry slices by the target resource type.</li>
+  <li><strong>Observation profiles</strong> are selected by category (laboratory, imaging) or
+by the profile's code pattern / value set (pregnancy, tobacco, alcohol).</li>
+  <li><strong>Data type profiles</strong> (CodeableConcept, Coding) are asserted over
+<code class="language-plaintext highlighter-rouge">descendants()</code> of every resource in the document.</li>
+  <li><strong>Missing information.</strong> A dedicated Creator scenario exports a patient with
+no known problems, allergies or medications and requires <code class="language-plaintext highlighter-rouge">emptyReason</code> or a
+"no known" entry in each required section; a Consumer scenario feeds the
+no-information and minimal examples.</li>
+  <li><strong>Every test case asks for the document once.</strong> ITB runs each scenario as an
+independent test case; a Server is tested without pasting.</li>
+  <li><strong>Checklists.</strong> Per-element confirmations use one core construct,
+<code class="language-plaintext highlighter-rouge">confirms each of these is &lt;displayed|accepted|supported&gt; for "…":</code> with a
+table of items: one ITB dialog with a Yes/No choice per row, one pass/fail
+per row in the report. No dialect needs its own way of asking.</li>
+  <li><strong>Evidence.</strong> Behavioural obligations end with an ITB interaction that
+instructs the operator, requires a file (screenshot, export or log) and
+takes an optional note; the test bed keeps the file in the session report
+beside the step. Attestations of capability (Creator) attach evidence too.</li>
+  <li><strong>Traceability.</strong> Scenarios carry <code class="language-plaintext highlighter-rouge">@profile:</code> and <code class="language-plaintext highlighter-rouge">@covers:</code> tags and must
+mention each covered element in a step. Coverage is checked by script, never
+by eye.</li>
+</ul>
+
+<h2 id="5-results">5. Results</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Check</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Features generated</td>
+      <td><code class="language-plaintext highlighter-rouge">ips-creator.feature</code> 31 scenarios, <code class="language-plaintext highlighter-rouge">ips-consumer.feature</code> 31 scenarios, <code class="language-plaintext highlighter-rouge">ips-server.feature</code> 6 scenarios</td>
+    </tr>
+    <tr>
+      <td>Self-test (fhirpath.js 3.18, R4 model)</td>
+      <td>150 of 150 generated assertions hold on the reference examples</td>
+    </tr>
+    <tr>
+      <td>Coverage</td>
+      <td>676 of 676 obligations covered by a scenario that names the element; 0 declared-only, 0 uncovered</td>
+    </tr>
+    <tr>
+      <td>Compile to GITB TDL (<code class="language-plaintext highlighter-rouge">check-features.mjs</code>)</td>
+      <td>0 errors in all three features</td>
+    </tr>
+    <tr>
+      <td>Reference example vs HL7 validator</td>
+      <td>0 errors, 0 warnings</td>
+    </tr>
+    <tr>
+      <td>Run on a live system</td>
+      <td>not done — no IPS Creator, Consumer or Server was available</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Two things the tests cannot do, stated rather than hidden: a <code class="language-plaintext highlighter-rouge">populate-if-known</code>
+element that the reference example does not carry is attested by the tester,
+not observed; and <code class="language-plaintext highlighter-rouge">SHOULD:display</code> is judged by a tester, not a machine. In
+both cases the judgement is backed by an evidence file in the session report.</p>
+
+<h2 id="6-packaging">6. Packaging</h2>
+
+<p><code class="language-plaintext highlighter-rouge">app/scripts/build-test-ig.mjs app/public/data/ips-test-ig.json --package</code>
+produces the <code class="language-plaintext highlighter-rouge">hl7-ips-test</code> IG (the pharm-MEOW-test layout): one TestPlan per
+actor whose tests are the scenarios and whose assertions are the <code class="language-plaintext highlighter-rouge">Then</code> steps,
+each test's description naming the obligations it covers; the features shipped
+under <code class="language-plaintext highlighter-rouge">package/tests/gherkin/</code>; this record as the Method page.</p>
+
+<h2 id="7-where-the-obligation-logic-should-live">7. Where the obligation logic should live</h2>
+
+<p>Three different jobs hide in "handling obligations":</p>
+
+<ol>
+  <li><strong>Stating and rendering them</strong> — the IG Publisher's job, and it does it: it
+validates the extension's structure and renders the obligation tables on
+every profile page. Nothing to add.</li>
+  <li><strong>Checking an instance against them for a named actor</strong> — a validator's job
+in principle: "validate this Bundle as produced by an IPS Creator" could
+turn every <code class="language-plaintext highlighter-rouge">SHALL:populate</code> into a missing-element error and every
+<code class="language-plaintext highlighter-rouge">populate-if-known</code> into a warning. The HL7 validator (<code class="language-plaintext highlighter-rouge">validator_cli</code>,
+HAPI core) has no such option today: its CLI accepts no actor, and
+obligations are ignored at validation time. That is the right place to add
+it, because the profile snapshot already carries the data and the validator
+already walks every element. Until then the generated <code class="language-plaintext highlighter-rouge">$ips at "…"</code>
+assertions are exactly that check, done outside the validator.</li>
+  <li><strong>Behavioural obligations</strong> — <code class="language-plaintext highlighter-rouge">handle</code>, <code class="language-plaintext highlighter-rouge">display</code>, <code class="language-plaintext highlighter-rouge">able-to-populate</code>.
+These are about what a system does, not what a document contains, so no
+validator can decide them. They need a reference dataset, a harness, and
+for <code class="language-plaintext highlighter-rouge">display</code> a human. That is what the ITB features are for, and it is the
+part no publisher or validator change would remove.</li>
+</ol>
+
+<p>So: leave rendering to the publisher, propose actor-scoped validation to the
+validator, and keep the behavioural tests in the test IG. The obligation
+inventory this record is built from is the same input all three would share.</p>
+
+<h2 id="how-to-rerun">How to rerun</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node app/scripts/ips-obligations.mjs all                        # extract, generate, selftest, check
+node ../itb-cli/packages/gherkin/scripts/check-features.mjs app/public app/public/features/ips-creator.feature
+node app/scripts/build-test-ig.mjs app/public/data/ips-test-ig.json --package
+</code></pre></div></div>
+
+<p>For the next IPS release change the version in the config and the
+<code class="language-plaintext highlighter-rouge">--spec</code> default; for another specification follow the <code class="language-plaintext highlighter-rouge">spec-to-test-ig</code> skill.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/costateixeira">Jose Costa Teixeira</a>.  
+          Package hl7.fhir.uv.ips.test#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/6.0.0-ballot5/">FHIR 6.0.0-ballot5</a>.
+          Generated 
+  <span title="2026-09-21 03:19:00 +0000">
+    2026-09-21
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

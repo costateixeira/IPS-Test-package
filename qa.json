@@ -1,0 +1,20 @@
+{
+  "url" : "http://example.com/fhir/hl7.fhir.uv.ips.test/ImplementationGuide/hl7.fhir.uv.ips.test",
+  "name" : "IPSTesting",
+  "title" : "IPS: TestPlans and Gherkin for the IPS actors",
+  "description" : "A demonstration IG that declares, as TestPlan resources and Gherkin feature files, the conformance tests for the three actors of the HL7 International Patient Summary (IPS) 2.0.1: Creator, Consumer and Server. The tests are derived mechanically from the obligations the IPS profiles state, and every obligation is traceable to a test case that names its element.",
+  "ig-date" : "2026-09-20",
+  "status" : "active",
+  "package-id" : "hl7.fhir.uv.ips.test",
+  "ig-ver" : "0.1.0",
+  "date" : "Mon, 21 Sep, 2026 03:19:57 +0000",
+  "dateISO8601" : "2026-09-21T03:19:57+00:00",
+  "errs" : 1,
+  "warnings" : 9,
+  "hints" : 8,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 0,
+  "version" : "6.0.0-ballot5",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 1040798968
+}

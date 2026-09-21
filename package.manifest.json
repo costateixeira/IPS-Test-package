@@ -1,0 +1,7 @@
+{
+  "version" : "0.1.0",
+  "fhirVersion" : ["6.0.0-ballot5"],
+  "date" : "20260921031957",
+  "name" : "hl7.fhir.uv.ips.test",
+  "jurisdiction" : "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
+}

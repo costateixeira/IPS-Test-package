@@ -1,0 +1,339 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>IPS Server Test Plan - IPS: TestPlans and Gherkin for the IPS actors v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/colors.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6.3"}
+    h3,h4,h5,h6{--heading-prefix:"6.3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">IPS: TestPlans and Gherkin for the IPS actors</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="International flag" src="../assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/6.0.0-ballot5/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="testing.html">Testing</a>
+  </li>
+  <li>
+    <a href="process.html">Method</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>IPS Server Test Plan</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-canonical -->
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">IPS: TestPlans and Gherkin for the IPS actors, published by Jose Costa Teixeira. This guide is not an authorized publication; it is the continuous build for version 0.1.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href='https://github.com/costateixeira/IPS-Test-package/tree/master'>https://github.com/costateixeira/IPS-Test-package/tree/master</a> and changes regularly. See the <a href='http://example.com/fhir/hl7.fhir.uv.ips.test/history.html'>Directory of published versions</a><br/><span data-smart-ci-extra="1" style="font-size:.85em;">Built from commit <a href="https://github.com/costateixeira/IPS-Test-package/commit/d9e2e6dec8990688fd306dd864ade8ce454ef101"><code>d9e2e6de</code></a>.</span></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="TestPlan-ips-server-tests.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="TestPlan-ips-server-tests.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="TestPlan-ips-server-tests.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">TestPlan: IPS Server Test Plan
+(Experimental)
+  </h2>
+
+  <table class="colsd" data-fhir="generated">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://example.com/fhir/hl7.fhir.uv.ips.test/TestPlan/ips-server-tests<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://example.com/fhir/hl7.fhir.uv.ips.test/TestPlan/ips-server-tests"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://example.com/fhir/hl7.fhir.uv.ips.test/TestPlan/ips-server-tests|0.1.0"/></span>
+      </td>
+      <td style="text-align: right;border-left-style: hidden" title="Enable this to see changes since the last official release">
+        <span id="toggle-change-display"><label style="margin:0;font-weight:normal" for="showChanges">Highlight text changes?</label>
+  
+        <input style="margin:0" type="checkbox" id="showChanges" onchange="toggleChanges()"/>
+  
+      </span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="5">
+        
+          Draft
+          
+
+            as of 
+2026-09-20
+
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">IPSServerTestPlan</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+<p>
+<p>Test plan for the <strong>IPS Server</strong> actor of <a href="https://hl7.org/fhir/uv/ips/">HL7 International Patient Summary (IPS) 2.0.1</a>.
+An IPS Server is a FHIR server acting as an IPS Creator by providing conformant
+IPS documents in response to FHIR API requests (CapabilityStatement ips-server).
+Each <code class="language-plaintext highlighter-rouge">suite</code> below is a <code class="language-plaintext highlighter-rouge">Rule:</code> of the Gherkin feature named by <code class="language-plaintext highlighter-rouge">suite.input.file</code>, and each <code class="language-plaintext highlighter-rouge">suite.test</code> one of its <code class="language-plaintext highlighter-rouge">Scenario:</code> lines, matched by the scenario's identifier. The assertions are the scenario's <code class="language-plaintext highlighter-rouge">Then</code> steps, verbatim.
+The tests declare which specification obligations they cover (9 element obligations across the plan); the coverage matrix is checked mechanically against the specification package.</p>
+
+</p>
+
+
+<p>
+
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="TestPlan-ips-server-tests.xml.html">XML</a>, <a href="TestPlan-ips-server-tests.json.html">JSON</a>, <a href="TestPlan-ips-server-tests.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><a name="ips-server-tests"> </a><a name="hcips-server-tests"> </a><p><b>Scopes</b></p><table class="grid"><tr><td><b>Reference</b></td><td><b>Description</b></td></tr><tr><td><a href="http://hl7.org/fhir/uv/ips/2.0.1/CapabilityStatement-ips-server.html">IPS Server Capability Statement</a></td><td>The IPS Server actor — a FHIR server acting as an IPS Creator through the $summary operation — is the system under test.</td></tr></table><p><b>1 Suite: The server declares the IPS capabilities</b></p><p>Rule: The server declares the IPS capabilities — the scenarios grouped under it in the feature file.</p><p><b>Inputs</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>File</b></td></tr><tr><td>gherkin-script</td><td>ips-server.feature</td></tr></table><p><b>Tests</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>Operation</b></td></tr><tr><td>ips-server-001 The CapabilityStatement declares the $summary operation</td><td>gherkin/Scenario</td></tr></table><hr/><p><b>2 Suite: $summary returns an IPS document</b></p><p>Rule: $summary returns an IPS document — the scenarios grouped under it in the feature file.</p><p><b>Inputs</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>File</b></td></tr><tr><td>gherkin-script</td><td>ips-server.feature</td></tr></table><p><b>Tests</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Operation</b></td></tr><tr><td>ips-server-002 $summary by patient identifier returns a Bundle (IPS) with identifier, timestamp and the composition first</td><td>Covers Bundle-uv-ips: Bundle.identifier, Bundle.timestamp, Bundle.entry:composition.</td><td>gherkin/Scenario</td></tr><tr><td>ips-server-003 The returned Composition is complete and about the requested patient</td><td>Covers Composition-uv-ips: Composition.status, Composition.type, Composition.subject, Composition.date, Composition.author, Composition.title.</td><td>gherkin/Scenario</td></tr><tr><td>ips-server-004 $summary honours the profile parameter</td><td/><td>gherkin/Scenario</td></tr><tr><td>ips-server-005 An unknown patient is refused, not answered with an empty document</td><td/><td>gherkin/Scenario</td></tr></table><hr/><p><b>3 Suite: The document the server returns meets the Creator obligations</b></p><p>Rule: The document the server returns meets the Creator obligations — the scenarios grouped under it in the feature file.</p><p><b>Inputs</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>File</b></td></tr><tr><td>gherkin-script</td><td>ips-server.feature</td></tr></table><p><b>Tests</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>Operation</b></td></tr><tr><td>ips-server-006 The returned document is the input for the Creator test cases</td><td>gherkin/Scenario</td></tr></table></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/costateixeira">Jose Costa Teixeira</a>.  
+          Package hl7.fhir.uv.ips.test#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/6.0.0-ballot5/">FHIR 6.0.0-ballot5</a>.
+          Generated 
+  <span title="2026-09-21 03:19:00 +0000">
+    2026-09-21
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

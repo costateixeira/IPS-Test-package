@@ -1,0 +1,28 @@
+[{
+  "id" : "hl7.fhir.uv.ips.test",
+  "type" : "ImplementationGuide",
+  "url" : "http://example.com/fhir/hl7.fhir.uv.ips.test/ImplementationGuide/hl7.fhir.uv.ips.test",
+  "version" : "0.1.0",
+  "name" : "IPSTesting"
+},
+{
+  "id" : "ips-consumer-tests",
+  "type" : "TestPlan",
+  "url" : "http://example.com/fhir/hl7.fhir.uv.ips.test/TestPlan/ips-consumer-tests",
+  "version" : "0.1.0",
+  "name" : "IPSConsumerTestPlan"
+},
+{
+  "id" : "ips-creator-tests",
+  "type" : "TestPlan",
+  "url" : "http://example.com/fhir/hl7.fhir.uv.ips.test/TestPlan/ips-creator-tests",
+  "version" : "0.1.0",
+  "name" : "IPSCreatorTestPlan"
+},
+{
+  "id" : "ips-server-tests",
+  "type" : "TestPlan",
+  "url" : "http://example.com/fhir/hl7.fhir.uv.ips.test/TestPlan/ips-server-tests",
+  "version" : "0.1.0",
+  "name" : "IPSServerTestPlan"
+}]

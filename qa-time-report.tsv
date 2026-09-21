@@ -1,0 +1,20 @@
+Source File	Size	loadResources	load	generateSnapshots	load-configure	scan	loadDepInfo	loadInfo	checkR4R4B	generateNarratives	validate	loadLists	checkConformanceResources	checkConformanceResources2	checkConformanceResources3	generateLogicalMaps	validateExpressions	scanForUsageStats	checkURLsUnique	processProvenanceDetails	translate	generate1	generate2	generateLogicals	makeDependencies	generateExampleZip	generateValidationPack	scanProfilesForR5	scanExamplesForR5
+/fsh-generated/resources/ImplementationGuide-hl7.fhir.uv.ips.test.json	6173	-	0	0	0	0	0	0	9	52	0	0	0	0	0	0	0	1	0	0	0	90	75	0	0	0	1	0	1
+fsh-generated/resources/Binary-ips-consumer-gherkin-script.json	91245	22	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	137	45	0	0	0	0	0	0
+fsh-generated/resources/Binary-ips-creator-gherkin-script.json	86180	6	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	120	19	0	0	0	0	0	0
+fsh-generated/resources/Binary-ips-server-gherkin-script.json	8671	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	20	7	0	0	0	0	0	0
+fsh-generated/resources/TestPlan-ips-consumer-tests.json	114576	16	0	0	0	0	0	0	14	15	0	0	0	0	0	0	0	2	0	0	0	208	104	0	0	0	7	0	0
+fsh-generated/resources/TestPlan-ips-creator-tests.json	82728	10	0	0	0	0	0	0	5	5	0	0	0	0	0	0	0	0	0	0	0	159	54	0	0	0	3	0	0
+fsh-generated/resources/TestPlan-ips-server-tests.json	8632	3	0	0	0	0	0	0	1	17	0	0	0	0	0	0	0	1	0	0	0	33	22	0	0	0	3	0	1
+/fsh-generated/includes/menu.xml	1262	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+/fsh-generated/includes/fsh-link-references.md	365	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/data/features.yml	5	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/downloads.xml	1287	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	36	0	0	0	0	0	0
+/input/pagecontent/testing.md	3334	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/process.md	8534	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+/input/pagecontent/changes.xml	635	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	27	0	0	0	0	0	0
+/input/pagecontent/index.md	2274	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+/template/config	0	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/template/config/_config.yml	140	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/temp/pages/_includes/artifacts.xml	216	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	1	0	0	0	0	0	0
+/temp/pages/_includes/fragment-artifacts-table.html	3331	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	0	0	0	0	0	0	0

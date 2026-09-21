@@ -1,0 +1,30 @@
+IPSTesting
+=========================================
+
+Generic: line 0, col 0, Error - This IG is version 6.0.0-ballot5, while the IG 'hl7.fhir.uv.ips' is from version 4.0.1 (BUSINESSRULE)
+Generic: line 0, col 0, Warning - Unable to find artifact http://hl7.org/fhir/uv/ips/CapabilityStatement/ips-server nominated as the artifact for test resource /TestPlan/ips-server-tests (NOTFOUND)
+Generic: line 0, col 0, Warning - Unable to find artifact http://hl7.org/fhir/uv/ips/ActorDefinition/Consumer nominated as the artifact for test resource /TestPlan/ips-consumer-tests (NOTFOUND)
+Generic: line 0, col 0, Warning - Unable to find artifact http://hl7.org/fhir/uv/ips/ActorDefinition/Creator nominated as the artifact for test resource /TestPlan/ips-creator-tests (NOTFOUND)
+Generic: line 0, col 0, Error - The link 'definitions.xml.zip' for "XML" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link 'definitions.json.zip' for "JSON" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link 'definitions.ttl.zip' for "Turtle" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link 'examples.xml.zip' for "XML" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link 'examples.json.zip' for "JSON" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link 'examples.ttl.zip' for "Turtle" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Warning - The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide (NOTFOUND)
+Generic: line 0, col 0, Warning - An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide (NOTFOUND)
+/work/fsh-generated/resources/ImplementationGuide-hl7.fhir.uv.ips.test.json: line 1, col 2071, Info - Reference to draft CodeSystem http://hl7.org/fhir/spdx-license|84728b7 (BUSINESSRULE)
+/work/fsh-generated/resources/ImplementationGuide-hl7.fhir.uv.ips.test.json: line 1, col 3263, Warning - The ImplementationGuide is based on FHIR version 6.0.0-ballot5 but package hl7.fhir.uv.ips#2.0.1 is based on FHIR version 4.0.1. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try (BUSINESSRULE)
+/work/fsh-generated/resources/ImplementationGuide-hl7.fhir.uv.ips.test.json: line 0, col 0, Info - The resource ImplementationGuide/hl7.fhir.uv.ips.test could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root) (BUSINESSRULE)
+/work/fsh-generated/resources/TestPlan-ips-consumer-tests.json: line 1, col 1288, Info - Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0 (BUSINESSRULE)
+/work/fsh-generated/resources/TestPlan-ips-consumer-tests.json: line 1, col 1712, Warning - No definition could be found for URL value 'https://www.itb.ec.europa.eu/docs/guides/latest/' (INVALID)
+/work/fsh-generated/resources/TestPlan-ips-consumer-tests.json: line 0, col 0, Info - The resource TestPlan/ips-consumer-tests could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root) (BUSINESSRULE)
+/work/fsh-generated/resources/TestPlan-ips-creator-tests.json: line 1, col 1487, Info - Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0 (BUSINESSRULE)
+/work/fsh-generated/resources/TestPlan-ips-creator-tests.json: line 1, col 1910, Warning - No definition could be found for URL value 'https://www.itb.ec.europa.eu/docs/guides/latest/' (INVALID)
+/work/fsh-generated/resources/TestPlan-ips-creator-tests.json: line 0, col 0, Info - The resource TestPlan/ips-creator-tests could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root) (BUSINESSRULE)
+/work/fsh-generated/resources/TestPlan-ips-server-tests.json: line 1, col 1335, Info - Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0 (BUSINESSRULE)
+/work/fsh-generated/resources/TestPlan-ips-server-tests.json: line 1, col 1771, Warning - No definition could be found for URL value 'https://www.itb.ec.europa.eu/docs/guides/latest/' (INVALID)
+/work/fsh-generated/resources/TestPlan-ips-server-tests.json: line 0, col 0, Info - The resource TestPlan/ips-server-tests could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root) (BUSINESSRULE)
+
+err = 1, warn = 9, info = 8
+IG Publisher Version: 2.3.4

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TestPlan xmlns="http://hl7.org/fhir" resourceDefinition="http://hl7.org/fhir/StructureDefinition/TestPlan|0.1.0-snapshot1">
+  <id value="ips-server-tests"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: TestPlan ips-server-tests</b></p><a name="ips-server-tests"> </a><a name="hcips-server-tests"> </a><p><b>Scopes</b></p><table class="grid"><tr><td><b>Reference</b></td><td><b>Description</b></td></tr><tr><td><a href="http://hl7.org/fhir/uv/ips/2.0.1/CapabilityStatement-ips-server.html">IPS Server Capability Statement</a></td><td>The IPS Server actor — a FHIR server acting as an IPS Creator through the $summary operation — is the system under test.</td></tr></table><p><b>1 Suite: The server declares the IPS capabilities</b></p><p>Rule: The server declares the IPS capabilities — the scenarios grouped under it in the feature file.</p><p><b>Inputs</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>File</b></td></tr><tr><td>gherkin-script</td><td>ips-server.feature</td></tr></table><p><b>Tests</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>Operation</b></td></tr><tr><td>ips-server-001 The CapabilityStatement declares the $summary operation</td><td>gherkin/Scenario</td></tr></table><hr/><p><b>2 Suite: $summary returns an IPS document</b></p><p>Rule: $summary returns an IPS document — the scenarios grouped under it in the feature file.</p><p><b>Inputs</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>File</b></td></tr><tr><td>gherkin-script</td><td>ips-server.feature</td></tr></table><p><b>Tests</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Operation</b></td></tr><tr><td>ips-server-002 $summary by patient identifier returns a Bundle (IPS) with identifier, timestamp and the composition first</td><td>Covers Bundle-uv-ips: Bundle.identifier, Bundle.timestamp, Bundle.entry:composition.</td><td>gherkin/Scenario</td></tr><tr><td>ips-server-003 The returned Composition is complete and about the requested patient</td><td>Covers Composition-uv-ips: Composition.status, Composition.type, Composition.subject, Composition.date, Composition.author, Composition.title.</td><td>gherkin/Scenario</td></tr><tr><td>ips-server-004 $summary honours the profile parameter</td><td/><td>gherkin/Scenario</td></tr><tr><td>ips-server-005 An unknown patient is refused, not answered with an empty document</td><td/><td>gherkin/Scenario</td></tr></table><hr/><p><b>3 Suite: The document the server returns meets the Creator obligations</b></p><p>Rule: The document the server returns meets the Creator obligations — the scenarios grouped under it in the feature file.</p><p><b>Inputs</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>File</b></td></tr><tr><td>gherkin-script</td><td>ips-server.feature</td></tr></table><p><b>Tests</b></p><table class="grid"><tr><td><b>Name</b></td><td><b>Operation</b></td></tr><tr><td>ips-server-006 The returned document is the input for the Creator test cases</td><td>gherkin/Scenario</td></tr></table></div>
+  </text>
+  <url value="http://example.com/fhir/hl7.fhir.uv.ips.test/TestPlan/ips-server-tests"/>
+  <version value="0.1.0"/>
+  <name value="IPSServerTestPlan"/>
+  <title value="IPS Server Test Plan"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-09-20"/>
+  <publisher value="Jose Costa Teixeira"/>
+  <contact>
+    <name value="Jose Costa Teixeira"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/costateixeira"/>
+    </telecom>
+  </contact>
+  <description value="Test plan for the **IPS Server** actor of [HL7 International Patient Summary (IPS) 2.0.1](https://hl7.org/fhir/uv/ips/).&#xA;An IPS Server is a FHIR server acting as an IPS Creator by providing conformant&#xA;IPS documents in response to FHIR API requests (CapabilityStatement ips-server).&#xA;Each `suite` below is a `Rule:` of the Gherkin feature named by `suite.input.file`, and each `suite.test` one of its `Scenario:` lines, matched by the scenario's identifier. The assertions are the scenario's `Then` steps, verbatim.&#xA;The tests declare which specification obligations they cover (9 element obligations across the plan); the coverage matrix is checked mechanically against the specification package."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="To declare, in a machine-readable and runnable form, which behaviours a system claiming conformance to the IPS Server actor must demonstrate."/>
+  <scope>
+    <reference value="http://hl7.org/fhir/uv/ips/CapabilityStatement/ips-server"/>
+    <description value="The IPS Server actor — a FHIR server acting as an IPS Creator through the $summary operation — is the system under test."/>
+  </scope>
+  <runner value="https://www.itb.ec.europa.eu/docs/guides/latest/"/>
+  <suite>
+    <name value="The server declares the IPS capabilities"/>
+    <description value="Rule: The server declares the IPS capabilities — the scenarios grouped under it in the feature file."/>
+    <input>
+      <name value="gherkin-script"/>
+      <file value="ips-server.feature"/>
+    </input>
+    <test>
+      <name value="ips-server-001 The CapabilityStatement declares the $summary operation"/>
+      <operation value="gherkin/Scenario"/>
+      <assertion>
+        <severity value="error"/>
+        <human value="$response.status should be 200"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$capability at &quot;CapabilityStatement.rest.where(mode='server').resource.where(type='Patient').operation.where(name='summary').exists()&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$capability at &quot;CapabilityStatement.instantiates.where($this.startsWith('http://hl7.org/fhir/uv/ips/CapabilityStatement/ips-server')).exists() or CapabilityStatement.rest.resource.where(type='Patient').operation.where(name='summary').definition.exists()&quot; should be true"/>
+      </assertion>
+    </test>
+  </suite>
+  <suite>
+    <name value="$summary returns an IPS document"/>
+    <description value="Rule: $summary returns an IPS document — the scenarios grouped under it in the feature file."/>
+    <input>
+      <name value="gherkin-script"/>
+      <file value="ips-server.feature"/>
+    </input>
+    <test>
+      <name value="ips-server-002 $summary by patient identifier returns a Bundle (IPS) with identifier, timestamp and the composition first"/>
+      <description value="Covers Bundle-uv-ips: Bundle.identifier, Bundle.timestamp, Bundle.entry:composition."/>
+      <operation value="gherkin/Scenario"/>
+      <assertion>
+        <severity value="error"/>
+        <human value="$response.status should be 200"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips should conform to &quot;http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips&quot; ignoring slicing errors"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.type&quot; should be &quot;document&quot;"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.identifier.exists()&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.timestamp.exists()&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.entry.first().resource.ofType(Composition).exists()&quot; should be true"/>
+      </assertion>
+    </test>
+    <test>
+      <name value="ips-server-003 The returned Composition is complete and about the requested patient"/>
+      <description value="Covers Composition-uv-ips: Composition.status, Composition.type, Composition.subject, Composition.date, Composition.author, Composition.title."/>
+      <operation value="gherkin/Scenario"/>
+      <assertion>
+        <severity value="error"/>
+        <human value="$response.status should be 200"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.entry.resource.ofType(Composition).all(status = 'final' or status = 'amended' or status = 'preliminary')&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.entry.resource.ofType(Composition).type.coding.where(system='http://loinc.org' and code='60591-5').exists()&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.entry.resource.ofType(Composition).subject.reference.exists()&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.entry.resource.ofType(Composition).date.exists()&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.entry.resource.ofType(Composition).author.exists()&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.entry.resource.ofType(Composition).title.exists()&quot; should be true"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips at &quot;Bundle.entry.resource.ofType(Patient).identifier.where(value='$patientIdentifier').exists() or Bundle.entry.resource.ofType(Patient).exists()&quot; should be true"/>
+      </assertion>
+    </test>
+    <test>
+      <name value="ips-server-004 $summary honours the profile parameter"/>
+      <operation value="gherkin/Scenario"/>
+      <assertion>
+        <severity value="error"/>
+        <human value="$response.status should be 200"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ipsProfiled should conform to &quot;http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips&quot; ignoring slicing errors"/>
+      </assertion>
+    </test>
+    <test>
+      <name value="ips-server-005 An unknown patient is refused, not answered with an empty document"/>
+      <operation value="gherkin/Scenario"/>
+      <assertion>
+        <severity value="error"/>
+        <human value="$response.status should be one of &quot;404, 400, 422&quot;"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$missing at &quot;OperationOutcome.issue.exists()&quot; should be true"/>
+      </assertion>
+    </test>
+  </suite>
+  <suite>
+    <name value="The document the server returns meets the Creator obligations"/>
+    <description value="Rule: The document the server returns meets the Creator obligations — the scenarios grouped under it in the feature file."/>
+    <input>
+      <name value="gherkin-script"/>
+      <file value="ips-server.feature"/>
+    </input>
+    <test>
+      <name value="ips-server-006 The returned document is the input for the Creator test cases"/>
+      <operation value="gherkin/Scenario"/>
+      <assertion>
+        <severity value="error"/>
+        <human value="$response.status should be 200"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="$ips should conform to &quot;http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips&quot; ignoring slicing errors"/>
+      </assertion>
+      <assertion>
+        <severity value="error"/>
+        <human value="Client is informed &quot;Continue with ips-creator.feature: use this returned document as the exported IPS.&quot; with $ips"/>
+      </assertion>
+    </test>
+  </suite>
+</TestPlan>
